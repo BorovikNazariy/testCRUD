@@ -1,18 +1,32 @@
 package com.example.testCRUD.model;
 
+
+import javax.persistence.*;
 import java.sql.Date;
 
 /**
  * Created by Администратор_ on 20.05.2020.
  */
+@Entity
+@Table(name = "users")
+
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Column(name = "FirstName")
     private String name;
+    @Column(name = "LastName")
     private String surname;
+    @Column(name = "birthday")
     private Date birthday;
+    @Column(name = "login")
     private String login;
+    @Column(name = "pass")
     private String password;
+    @Column(name = "aboutMe")
     private String aboutMe;
+    @Column(name = "address")
     private String address;
 
     public Integer getId() {
@@ -78,4 +92,6 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
+
+
 }

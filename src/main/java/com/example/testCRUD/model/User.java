@@ -8,11 +8,12 @@ import java.sql.Date;
  * Created by Администратор_ on 20.05.2020.
  */
 @Entity
-@Table(name = "users")
+@Table(name = "\"users\"")
 
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
     @Column(name = "FirstName")
     private String name;
@@ -92,6 +93,18 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", birthday=" + birthday +
+                ", login='" + login + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
 
 
 }

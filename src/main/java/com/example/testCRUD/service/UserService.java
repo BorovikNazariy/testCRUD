@@ -13,7 +13,7 @@ public interface UserService {
 
     User read(int id);
 
-    boolean update(User user, int id);
+    void update(User user, int id);
 
-    boolean delete(int id);
+    void delete(int id);
 }
